@@ -34,3 +34,21 @@ export const getAllPost = async (request, response) => {
         response.status(500).json({ msg: error.message })
     }
 }
+
+
+
+export const getPost = async (request, response) => {
+
+    try {
+        const post = await Post.findById(request.params.id);
+        return response.status(200).json(post)
+
+
+    } catch (error) {
+        return response.status(500).json({ msg: error.message })
+    }
+
+
+
+
+}
