@@ -1,27 +1,25 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-
-
-const commentSchema = mongoose.Schema({
+const CommentSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     postId: {
         type: String,
-        required: true,
-
+        required: true
     },
     date: {
         type: String,
         required: true
     },
-    comment: {
+    comments: {
         type: String,
-        
+        required: true
     }
-})
+});
 
 
-const comment = mongoose.model('comment', commentSchema);
+const comment = mongoose.model('comment', CommentSchema);
+
 export default comment;
